@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:text="action"
+            android:textColor="#ffffff" />
+
+        <Button
+            android:id="@+id/btn_play"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="play" />
+
+        <Button
+            android:id="@+id/btn_exit"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="stop" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:text="volumn"
+            android:textColor="#ffffff" />
+
+        <Button
+            android:id="@+id/btn_up"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="up+" />
+
+        <Button
+            android:id="@+id/btn_down"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="down-" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:text="seek"
+            android:textColor="#ffffff" />
+
+        <Button
+            android:id="@+id/btn_seek_left"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="back" />
+
+        <Button
+            android:id="@+id/btn_seek_right"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="forward" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:text="||"
+            android:textColor="#ffffff" />
+
+        <Button
+            android:id="@+id/btn_pasue"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="pause" />
+
+        <Button
+            android:id="@+id/btn_goon"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="goon" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:text="state"
+            android:textColor="#ffffff" />
+
+        <Button
+            android:id="@+id/btn_getmedia_duration"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="getMediaDuration" />
+
+        <Button
+            android:id="@+id/btn_get_position"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="getPosition" />
+    </LinearLayout>
+</LinearLayout>
