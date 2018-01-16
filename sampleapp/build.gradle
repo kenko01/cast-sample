@@ -19,7 +19,7 @@ android {
         }
     }
     defaultConfig {
-        applicationId "com.example.sampleapp2"
+        applicationId "com.example.sampleapp"
         minSdkVersion 16
         targetSdkVersion 27
         versionCode 3018

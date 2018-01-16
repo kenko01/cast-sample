@@ -40,7 +40,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener, IMemoDeviceListener, AdapterView.OnItemSelectedListener{
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     public ExecutorService mThreadPool = Executors.newFixedThreadPool(5);
     android.support.v4.app.FragmentManager mFragmentManager;
     CastMediaInfo mCastMediaInfo;
@@ -57,8 +57,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btn_scan).setOnClickListener(this);
         findViewById(R.id.btn_device).setOnClickListener(this);
         mCastButton = new CastButton();
-        mCastButton.prepare(this, (ImageView) findViewById(R.id.tvcast_btn));
-        findViewById(R.id.tvcast_btn).setOnClickListener(this);
+        mCastButton.prepare(this, this);
         MiniController.getInstance().onCreate(MainActivity.this);
     }
     @Override
@@ -81,7 +80,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void finish() {
         super.finish();
-        MemoTVCastSDK.unRegisterDeviceListener(this);
     }
     @Override
     public void onClick(View v) {
@@ -91,17 +89,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void onClickCastButton(){
-        final String playUrl = "http://your real playing url";
-        final String rawUrl = "http://your raw video url";
-        final String videoName= "your video name";
-        final String cover = "http://your cover image url";
-        final String avater = "http://your avater image url";
-        final String author= "video author";
+        final String playUrl = "http://jzvd.nathen.cn/342a5f7ef6124a4a8faf00e738b8bee4/cf6d9db0bd4d41f59d09ea0a81e918fd-5287d2089db37e62345123a1be272f8b.mp4";
+        final String rawUrl = "http://your-raw-url";
+        final String videoName= "your video-name";
+        final String cover = "http://your-cover-image-url";
+        final String avater = "http://your-avater-image-url";
+        final String author= "video-author";
         final CastMediaInfoConstract.CastMediaInfoCallback callback = new CastMediaInfoConstract.CastMediaInfoCallback(){
 
             @Override
             public boolean isSyncPlayingInfo() {
-                return false;
+                //如果开发者不需要再次访问服务器就可以提供播放链接，return true
+                //如果开发者需要请求服务器获取播放链接，返回false。执行请求，请在getASyncCastMediaInfo
+               // 方法中处理
+                return true;
             }
 
             @Override
@@ -119,7 +120,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             .setVideoAvater(avater)
                             .build();
                 }
-                return null;
+                return mCastMediaInfo;
             }
 
             @Override
@@ -165,38 +166,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mCastButton.onClickCastButton(MainActivity.this,callback);
     }
 
-    @Override
-    public void onDeviceAdd(Device device) {
-        Log.i("NOTFOUND","onDeviceAdd");
-    }
-
-    @Override
-    public void onDeviceRemove(Device device) {
-        if( MemoDeviceServiceHelper.getInstance().getDevices().size()==0){
-        }
-    }
-
-    @Override
-    public void onDeviceCheated(String name, String chipId) {
-
-    }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
         mCastButton.onActivityDestroy();
         MemoTVCastSDK.exit();
-    }
-
-    public int mSelectIndex = -1;
-    @Override
-    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        mSelectIndex = i;
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> adapterView) {
-
     }
 
     @Override
