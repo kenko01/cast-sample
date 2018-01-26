@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="memo-tvcast-release-1:@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/memo-tvcast-release-1.aar/e0c8f8f6bd82c8793a29bd926321955d/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/memo-tvcast-release-1.aar/e0c8f8f6bd82c8793a29bd926321955d/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
