@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void onClickCastButton(){
-        final String playUrl = "http://jzvd.nathen.cn/342a5f7ef6124a4a8faf00e738b8bee4/cf6d9db0bd4d41f59d09ea0a81e918fd-5287d2089db37e62345123a1be272f8b.mp4";
+        final String playUrl = "http://your-play-url";
         final String rawUrl = "http://your-raw-url";
         final String videoName= "your video-name";
         final String cover = "http://your-cover-image-url";
@@ -116,7 +116,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             .setVideoName(videoName)
                             .setRawUrl(rawUrl)
                             .setVideoCover(cover)
-                            .setVideoAuthorName("Author")
+                            .setVideoAuthorName(author)
                             .setVideoAvater(avater)
                             .build();
                 }
@@ -186,6 +186,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void initToolbar() {
         Toolbar mToolbarTb = (Toolbar) findViewById(R.id.tb_toolbar);
         if (mToolbarTb != null) {
+            mToolbarTb.setTitle("");
             TextView labelTitle = (TextView) mToolbarTb.findViewById(R.id.tv_title_toolbar);
             setSupportActionBar(mToolbarTb);
         }
