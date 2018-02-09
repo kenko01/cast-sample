@@ -13,23 +13,19 @@ import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 //import com.example.sampleapp.utils.PermissionUtils;
 import com.memo.CastContext;
 import com.memo.CastMediaInfo;
 import com.memo.CastMediaInfoConstract;
-import com.memo.cable.MemoDeviceServiceHelper;
 import com.memo.remote.CastSessionManager;
 import com.memo.sdk.IMemoDeviceListener;
 import com.memo.sdk.MemoTVCastSDK;
 import com.memo.uiwidget.CastButton;
 import com.memo.uiwidget.MiniController;
 import com.memo.uiwidget.TubiRemoteDialogFragment;
-
 import org.cybergarage.upnp.Device;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.IOException;
 import java.util.Random;
 import java.util.concurrent.ExecutorService;
@@ -89,7 +85,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     public void onClickCastButton(){
-        final String playUrl = "http://your-play-url";
+        final String playUrl = "http://download.memohi.com/test/live-2.mp4";
         final String rawUrl = "http://your-raw-url";
         final String videoName= "your video-name";
         final String cover = "http://your-cover-image-url";
