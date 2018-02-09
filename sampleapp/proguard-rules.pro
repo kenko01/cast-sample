@@ -83,7 +83,7 @@ public *;
 -keepattributes *Annotation*
 -keep class android.** {*;}
 -keep enum org.greenrobot.eventbus.ThreadMode { *; }
--keep class com.wang.avi.** { *; }
--keep class com.wang.avi.indicators.** { *; }
+-keep class com.memo.wang.avi.** { *; }
+-keep class com.memo.wang.avi.indicators.** { *; }
 -keep public class io.evercam.** { *; }
 -dontwarn io.evercam.**
