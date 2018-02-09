@@ -85,3 +85,5 @@ public *;
 -keep enum org.greenrobot.eventbus.ThreadMode { *; }
 -keep class com.wang.avi.** { *; }
 -keep class com.wang.avi.indicators.** { *; }
+-keep public class io.evercam.** { *; }
+-dontwarn io.evercam.**
