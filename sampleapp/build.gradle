@@ -5,7 +5,7 @@ repositories {
 }
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 26
     buildToolsVersion "27.0.2"
     signingConfigs {
         debug {
@@ -21,7 +21,7 @@ android {
     defaultConfig {
         applicationId "com.example.sampleapp"
         minSdkVersion 16
-        targetSdkVersion 27
+        targetSdkVersion 26
         versionCode 3018
         versionName "3.0.18"
     }
@@ -41,5 +41,5 @@ dependencies {
     compile 'com.android.support:support-v4:27.0.2'
     compile 'com.android.support:appcompat-v7:27.0.2'
     compile 'com.github.bumptech.glide:glide:3.7.0'
-    compile(name:'hyppcast-1', ext:'aar')
+    compile(name: 'tubicast-3', ext: 'aar')
 }

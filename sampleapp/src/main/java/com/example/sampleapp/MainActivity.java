@@ -2,6 +2,7 @@ package com.example.sampleapp;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
@@ -41,6 +42,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     android.support.v4.app.FragmentManager mFragmentManager;
     CastMediaInfo mCastMediaInfo;
     CastButton mCastButton;
+    public String[] mUrls = new String[]{
+        "http://download.memohi.com/video/hello.mp4",
+            "http://download.memohi.com/video/pig.mp4",
+            "http://download.memohi.com/video/Sport.mp4",
+            "http://download.memohi.com/video/xiaobieli.mp4",
+            "http://download.memohi.com/video/X-MAN.mp4",
+    };
+    public CastMediaInfo getRamdomOne(){
+        int randomIndex = new Random().nextInt(5);
+        final String playUrl = mUrls[randomIndex];
+        final String rawUrl = playUrl;
+        final String videoName= "MemoHi-Test-"+randomIndex;
+        final String cover = "http://your-cover-image-url";
+        final String avater = "http://your-avater-image-url";
+        final String author= "Tester";
+        CastMediaInfo castMediaInfo = new CastMediaInfo.Builder()
+                .setPlayUrl(playUrl)
+                .setVideoName(videoName)
+                .setRawUrl(rawUrl)
+                .setVideoCover(cover)
+                .setVideoAuthorName(author)
+                .setVideoAvater(avater)
+                .build();
+        return castMediaInfo;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -103,19 +129,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             @Override
             public CastMediaInfo getSyncCastMediaInfo() {
-                if(mCastMediaInfo!=null)
-                {
-                    return mCastMediaInfo;
-                }else {
-                    mCastMediaInfo = new CastMediaInfo.Builder()
-                            .setPlayUrl(playUrl)
-                            .setVideoName(videoName)
-                            .setRawUrl(rawUrl)
-                            .setVideoCover(cover)
-                            .setVideoAuthorName(author)
-                            .setVideoAvater(avater)
-                            .build();
-                }
+//                if(mCastMediaInfo!=null)
+//                {
+//                    return mCastMediaInfo;
+//                }else {
+//                    mCastMediaInfo = getRamdomOne();
+//                }
+                mCastMediaInfo = getRamdomOne();
                 return mCastMediaInfo;
             }
 
