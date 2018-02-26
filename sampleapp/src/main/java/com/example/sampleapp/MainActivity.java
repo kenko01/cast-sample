@@ -121,9 +121,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             @Override
             public boolean isSyncPlayingInfo() {
-                //如果开发者不需要再次访问服务器就可以提供播放链接，return true
-                //如果开发者需要请求服务器获取播放链接，返回false。执行请求，请在getASyncCastMediaInfo
-               // 方法中处理
+                // If the developer does not need to access the server again to provide a play link, return true
+                // If the developer needs to ask the server for a play link, return false. Execute the request, please getASyncCastMediaInfo method to deal with
                 return true;
             }
 
