@@ -41,5 +41,5 @@ dependencies {
     compile 'com.android.support:support-v4:27.0.2'
     compile 'com.android.support:appcompat-v7:27.0.2'
     compile 'com.github.bumptech.glide:glide:3.7.0'
-    compile(name: 'tubicast-3', ext: 'aar')
+    compile(name: 'tubicast-4', ext: 'aar')
 }
